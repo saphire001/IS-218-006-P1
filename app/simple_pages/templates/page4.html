@@ -1,4 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 4
+    <h1>GitHub Actions</h1>
+    <p>
+        A continuous integration and continuous delivery platform. allows automation of building, testing and deploying.
+        There are five main components to GitHub actions; workflows, events, jobs, actions, and runners.
+        Workflows are configurable automated processes that will run one or more jobs. They are defined by the YAML file
+        and run when triggered by an event. Events are the activity within the repo that trigger the workflow.
+        Activities include pushing or pulling into a repo, opening an issue or creating a request. It can be done manually
+        or scheduled. Jobs are the steps in the workflow that execute on runner. They are shell scripts or actions that
+        need to run / execute. Actions are custom to GitHub Action platform. They preform repeatedly complex tasks.
+        This helps lower the amount of repetitive code that you need to write. Runners are the servers in which the
+        workflows run. They only do one job at a time.
+    </p>
+
+    <h1>Linking to Docker</h1>
+    <p> You can trigger a workflow so that it publishes a docker image. You should store your docker username and
+        password in the secrets section. This is for the login action. Images is used for the metadata action as it is
+        what you are building/pushing to Docker Hub. Finally, comes the build-push action, tags used to tell you what
+        version and push. Push if set to true will send it to the hub if it successfully builds.
+    </p>
+
 {% endblock %}

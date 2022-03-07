@@ -1,4 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 1
+<h1>Branches</h1>
+<p>
+    Pointers to a specific commit. It moves along with new commits made. They are isolated lines.
+    Allow for work to be done in parallel. The main line is called Master.
+    You can create a branch by using the git branch command. It creates a new pointer at the current commit.
+    To delete an existing branch you can use the git branch -d or -D command.
+</p>
+
+<h1>Merge</h1>
+<p>
+    Used to combine two branches together, usually an independent line to the main one.
+    Finds the common case and commits it.
+    The base commit creates a new commit that merges the changes of each merge commit.
+    Git automatically combines separate histories when merge commits are made.
+</p>
+
+<h1>Commits</h1>
+<p>
+    Saves all currently staged changes of the project. Used to see the current state of the project.
+    These “snapshots” are the safe versions of the project. The snapshots are first saved locally then stored.
+    This allows for features to be committed together in groups. Then sent to the central repository.
+    This allows for work to be done in an isolated manner.
+</p>
+
+<h1>Tags</h1>
+<p>
+    Reference points to a specific point in the repository history.
+    Usually used when releasing a new version of a project. There are two types of tags, annotated and lightweight.
+    Annotated tags are stored as full objects in the database.
+    Lightweight tags are simply a name and pointer to a commit.
+</p>
+
+<h1>Repositories</h1>
+<p>
+    Contain a collection of files of different versions of a project.
+    Users use version control systems to create, modify and update these versions.
+    Cloning is used to get a repo onto a local. They can also create and delete repositories.
+    There are two types of repositories, bare and non-bare. Bare repositories are used by multi developers to share.
+    Users are not allowed to modify or create new versions based on the mods.
+    Non-bare repositories allow developers to create new modifications and versions.
+    Cloning repositories automatically create these types.
+    There are four stages a file has in a repository, untracked, tracked, staged and modified.
+    Untracked files are the ones that the file was never committed nor staged.
+    Tracked files are the ones that are committed but not staged.
+    Staged files are the ones that were added and are waiting to be committed.
+    Modified files are files that changed but not staged.
+    To synchronize your main and remote repositories you need to use the git push and pull commands.
+    Git pull to go from the main to remote and push for vise versa.
+</p>
 {% endblock %}
