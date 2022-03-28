@@ -1,16 +1,151 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Pytest</h1>
-    <p>
-        A testing framework based on Python. Mainly used for API test cases. Can also be used for databases and UI.
-        Can go from unit testing to functional testing.
-    </p>
-
-    <h1>Flask</h1>
-    <p>
-        Flask is a web framework for Python. It is based on the Werkzeug toolkit.
-        This is how you create web pages for you site. You can test your flask application through pytest.
-        You can mainly sync this with your GitHub and use GitHub actions to test your code.
-    </p>
-
+<h1>OOP Terms and Definitions</h1>
+    <h2>Instantiation</h2>
+        <p>
+            Creation of an object or an instance of a class.
+            Given a name and the object is created in memory or on the disk.
+            This is done through class declaration. In gist, instantiation means create.
+            In python, instantiating a class is quite simple. The syntax for it is:
+            identifier = ClassName (passed_parameters).
+        </p>
+    <h2>Object</h2>
+        <p>
+            An instance of a class. It is a collection of data (also known as variables) and methods
+            (also known as functions) that act on the data. These are created or instantiated through the class
+            that it came from.
+        </p>
+    <h2>Class</h2>
+        <p>
+            The blueprint of an object. For a class to be in use it needs to have functionality.
+            These are defined by setting attributes that hold data and the functions related to them are methods.
+            In python the creation of a class can be done through the class keyword.
+            Methods are created using the def keyword.  Python also has a self parameter that references
+            the current instance of the class.
+        </p>
+    <h2>Namespace</h2>
+        <p>
+            A collection of defined symbolic names along with information about the object that is being referenced.
+            This can be seen as a dictionary or a key-value pair where the key is the name and the value is the object.
+            In python there are four types of namespaces: built-in, global, enclosing and local.
+            Built-in namespaces are those objects that are always available when python is running.
+            These can be found using the dir(__builtin__) command. Global namespaces are the names that are defined
+            at the main program. It is created when the  body of the main program is executed and stays there till
+            the terminal is terminated. 	Local and enclosing namespaces are quite similar. They both are functions
+            and are deleted when the function is done executing. The difference between the two is that an enclosing
+            namespace is created when a function is defined inside a function.
+        </p>
+    <h2>Constructor</h2>
+        <p>
+            A method that is called when an object is created. It is defined in the class and is mainly used
+            to instantiate an object. In python this method is __init__(), is automatically executed when the class
+            is being initiated. The syntax for the constructor is: def __init__(self): .
+            Python has two types of constructors: default and parameterized. The default constructor does not accept
+            any arguments and only has the reference to the instance being created. The other type of constructor
+            takes in other arguments along with self.
+        </p>
+    <h2>Fixture</h2>
+        <p>
+            This is part of Python’s pytest. Fixtures are used to feed data to the test and run before the test
+            function is applied to.  It is mainly used to help test input data from places like databases and URLs.
+            To make a function a fixture, it needs to have: @pytest.fixture.
+        </p>
+    <h2>Type Hint</h2>
+        <p>
+            Python is a dynamic programming language, so it can be hard to check what type of object is being used.
+            Type hinting is very useful and is exactly as it seems, the programmer hints at the type of the object(s)
+            being used. These hints will help type checker tools within the IDEs,
+            help with documentation and help people viewing the code better understand what goes where to get a better
+            understanding of the code itself.  It is recommended to use static type checkers.
+        </p>
+    <h2>Type Cast</h2>
+        <p>
+            A method used to convert a data type into another. There are two main types of type casting in python:
+            implicit and explicit. In implicit, the conversion happens automatically and the user/programmer does
+            not need to get involved. In explicit, the user does need to get involved. Explicit type casting can be
+            done with three data type functions. The int() function takes in floats or strings and converts them into
+            ints. float() function takes in ints or strings and turns them into floats. The last function takes in
+            ints and floats and returns strings.
+        </p>
+    <h2>Unit Test</h2>
+        <p>
+            Checks to see if a single component operates correctly. It is considered the first level of testing
+            software. In python unit testing is unittest. It was inspired by java’s JUnit and offers similar features
+            that are in other languages. Such features include: test automation, ability to share setup and shutdown
+            code, putting tests into a collection and test report independence.
+        </p>
+    <h2>Static</h2>
+        <p>
+            The member is on class level instead of instance level.
+            There are static variables and methods. Static variables exist on the class level and if changed in one
+            instance of class, all others are changed. Static methods don’t refer to an instance and can be called
+            outside it. These methods cannot access non static data of the class. There are two ways of defining
+            static methods within a class. One way is by using @staticmethod, by using this decorator, the method
+            will only share the namespace with the class. No arguments necessary and has access to static variables.
+            The other way is with @classmethod which needs one argument, the class which it was called from.
+        </p>
+    <h2>Instance Method</h2>
+        <p>
+            Most common  type of method in Python. Can access unique data of instance.
+            Has only one default parameter of self.  No need for a decorator as methods will auto to this type unless
+            specified otherwise.
+        </p>
+    <h2>Instance Property</h2>
+        <p>
+            Attributes / properties that are attached to an instance of a class.
+            Defined inside a constructor using self as a parameter. It is specific to an object.
+            These are accessed by the use of dot notation: object.instance_attribute.
+            Changes are not reflective in other objects.
+        </p>
+    <h2>Static Method</h2>
+        <p>
+            Related to class in some way but do not need access to the data inside. Can be simply called.
+            Great for utility functions which perform tasks in isolation. Only uses data passed in.
+            The @staticmethod decorator tells Python that the method is static
+        </p>
+    <h2>Static Property</h2>
+        <p>
+            Also known as class property / attributes. Variables defined inside a class and shared across objects.
+            It is accessed using class name and dot notation: classname.class_attribute or object.class_attribute.
+            Changes can be reflective in other objects through: classname.class_attribute = value.
+        </p>
+    <h2>Encapsulation</h2>
+        <p>
+            One of the four main concepts in object-oriented programming (OOP).
+            It is the process of wrapping variables and methods together.
+            Acts as a shield that restricts access to variables and methods directly thus preventing
+            accidental / unauthorized modification to the data. Access modifiers are used to limit the access,
+            there are three types: private, public and protected. By default, classes are public,
+            meaning they are accessible anywhere from the class. Protected means that it is accessible within the
+            class and its sib-classes. They are defined with a prefix of a single underscore.
+            Privates are only accessible within the class itself.
+            They are defined by a prefix of double underscore.
+        </p>
+    <h2>Inheritance</h2>
+        <p>
+            One of the four main concepts in object-oriented programming (OOP).
+            Allows programmers to define a class that inherits methods and properties from another class.
+            The class that is being inherited from is that parent or base class. Any class can be the parent class.
+            The class that inherits from the other class is known as that child or derived class.
+            To create a child class in python, the parent class needs to be a parameter of that class.
+        </p>
+    <h2>Polymorphism</h2>
+        <p>
+            One of the four main concepts in object-oriented programming (OOP).
+            The literal meaning is existing in or assuming different forms.
+            In programming, it refers to the use of a type entity (those being method, operator, or object)
+            to represent different scenarios. For functions, it allows certain functions the ability to run with
+            multiple data types. This can also be used when creating classes. It allows for different classes to
+            have methods that are the same name. If we were to combine this with inheritance, it allows programmers
+            to method override in the child class. Meaning redefining methods and attributes that are in the parent
+            class to better fit the child class.
+        </p>
+    <h2>Abstraction</h2>
+        <p>
+            One of the four main concepts in object-oriented programming (OOP).
+            The process of handling complexity by hiding unnecessary information from the user.
+            This is done through abstract classes and methods. Classes that contain abstract method(s)
+            are abstract classes. These methods do not include implementations. They are defined and implemented
+            as part of the methods of the subclasses inherited from the abstract class.
+        </p>
 {% endblock %}
