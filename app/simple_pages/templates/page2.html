@@ -1,41 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Containers</h1>
-<p>
-    Standard unit of software that packages up code and all its dependencies so
-    the application runs quickly and reliably from one computing environment to another.
-    Numerous ones run on the same infrastructure. They share operating systems. Each application runs in isolation.
-    There are three types of containers; standard, lightweight and secure.
-    Standard containers is the industry standard ones that Docker created.
-    Lightweight ones share the OS system kernel thus not requiring an OS per application.
-    The secure containers are where applications are safer as Docker provides the strongest
-    default isolation capabilities.
-</p>
-
-<h1>Images</h1>
-<p>
-    A template with instructions for creating containers. Can be considered a starting point when using Docker.
-    Is compared to a snapshot in virtual machines. They contain the application code, libraries, tools, dependencies
-    and other files needed to make an application run. It is stored in Docker Hub or repos.
-</p>
-
-<h1>Commands</h1>
-<p>
-    There are a few commands that you need to know.
-    docker -version which tells you the current version of docker you have installed.
-    docker pull / push, used to push or pull images from docker repo.
-    docker run is used to create a container from an image.
-    docker ps is used to see what containers are running. 
-    Adding a -a to the end of it will let you also see existing containers.
-    docker exec is how you access a running container.
-    docker stop is how you shut it down.
-    docker kill ends it immediately.
-    docker commit is used to create a new image of an edited container on local.
-    docker login is how you log in into your hub repo.
-    docker images is how you can see all locally stored images.
-    docker rm is how you delete a stopped container.
-    Add an i next to rm and switch the container id to an image one, and you end up doing the same for your image.
-    docker build is how you build an image from that file.
-</p>
-<p> By using the proper commands you can do all this using the terminal. </p>
+<h1>AAA Testing</h1>
+    <h2>AAA Testing with Python</h2>
+        <p>
+            AAA stands for Arrange-Act-Assert. This pattern is used to structure unit test cases.
+            Unit testing is testing the smallest component of a software.
+            Mainly used to make sure that all individual parts are working the way they are supposed to.
+        </p>
+    <h3>Arrange</h3>
+        <p>
+            The first A is Arrange which is the setup of the test case.
+            This section is usually the largest and is about the inputs and the targets.
+            When creating a test case for the sum function of the calculator program,
+            the arrange section would consist of  the numbers that need to be added and the calculator itself.
+        </p>
+    <h3>Act</h3>
+        <p>
+            The second A is Act or the actual test itself.
+            This section of the test should be only one line of code,
+            if there are more lines than there is something wrong with the API.
+            The act for testing the add function would be adding the two numbers in the arrange section
+            by calling the function through the calculator.
+        </p>
+    <h3>Assert</h3>
+        <p>
+            The last A is Assert where the response is checked for accuracy.
+            This can be as simple as making sure that the values match to something complex as system management.
+            In the end though this section shows if the test passed or failed. For the add function test,
+            simply checking to see if the results matches properly would do. This is because all the function
+            does is add two numbers, so if the function result number and the number that is supposed to be
+            the result don’t match then something is wrong with the function and should be checked.
+        </p>
+    <h2>Why is testing important</h2>
+        <p>
+            The main reason why testing is important is because it helps identify errors or issues in code that
+            need to be fixed. There are also many benefits that come with testing. One benefit is that it can
+            help improve the quality of the work that is being done. This can be done by comparing the
+            actual results with the expected ones. Testing can also help enhance security.
+            By finding flaws in the system beforehand, the company can deal with security issues quicker and
+            more efficiently. Most of the time there are multitudes of people working on one project,
+            if an error occurs on one person’s code, and it’s sent to the others then everyone is impacted greatly.
+            Testing helps prevent these types of issues and makes the process a bit better and faster.
+            Testing will also help improve trust with customers as they will less likely have to deal with
+            buggy systems that are annoying to handle. When adding new features, testing makes it easier to see if
+            the feature is compatible with the program and if it is not then to see where exactly it is not.
+            In the end, the reasons why testing is important in software development fall into three categories:
+            fixing errors, customer satisfaction and quality assurance of the product.
+        </p>
 {% endblock %}
