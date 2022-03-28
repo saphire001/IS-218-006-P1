@@ -1,52 +1,122 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Branches</h1>
-<p>
-    Pointers to a specific commit. It moves along with new commits made. They are isolated lines.
-    Allow for work to be done in parallel. The main line is called Master.
-    You can create a branch by using the git branch command. It creates a new pointer at the current commit.
-    To delete an existing branch you can use the git branch -d or -D command.
-</p>
-
-<h1>Merge</h1>
-<p>
-    Used to combine two branches together, usually an independent line to the main one.
-    Finds the common case and commits it.
-    The base commit creates a new commit that merges the changes of each merge commit.
-    Git automatically combines separate histories when merge commits are made.
-</p>
-
-<h1>Commits</h1>
-<p>
-    Saves all currently staged changes of the project. Used to see the current state of the project.
-    These “snapshots” are the safe versions of the project. The snapshots are first saved locally then stored.
-    This allows for features to be committed together in groups. Then sent to the central repository.
-    This allows for work to be done in an isolated manner.
-</p>
-
-<h1>Tags</h1>
-<p>
-    Reference points to a specific point in the repository history.
-    Usually used when releasing a new version of a project. There are two types of tags, annotated and lightweight.
-    Annotated tags are stored as full objects in the database.
-    Lightweight tags are simply a name and pointer to a commit.
-</p>
-
-<h1>Repositories</h1>
-<p>
-    Contain a collection of files of different versions of a project.
-    Users use version control systems to create, modify and update these versions.
-    Cloning is used to get a repo onto a local. They can also create and delete repositories.
-    There are two types of repositories, bare and non-bare. Bare repositories are used by multi developers to share.
-    Users are not allowed to modify or create new versions based on the mods.
-    Non-bare repositories allow developers to create new modifications and versions.
-    Cloning repositories automatically create these types.
-    There are four stages a file has in a repository, untracked, tracked, staged and modified.
-    Untracked files are the ones that the file was never committed nor staged.
-    Tracked files are the ones that are committed but not staged.
-    Staged files are the ones that were added and are waiting to be committed.
-    Modified files are files that changed but not staged.
-    To synchronize your main and remote repositories you need to use the git push and pull commands.
-    Git pull to go from the main to remote and push for vise versa.
-</p>
+<h1>Git</h1>
+    <h2>Branches</h2>
+        <p>
+            Pointers to a specific commit. It moves along with new commits made. They are isolated lines.
+            Allow for work to be done in parallel. The main line is called Master.
+            You can create a branch by using the git branch command. It creates a new pointer at the current commit.
+            To delete an existing branch you can use the git branch -d or -D command.
+        </p>
+    <h2>Merge</h2>
+        <p>
+            Used to combine two branches together, usually an independent line to the main one.
+            Finds the common case and commits it.
+            The base commit creates a new commit that merges the changes of each merge commit.
+            Git automatically combines separate histories when merge commits are made.
+        </p>
+    <h2>Commit</h2>
+        <p>
+            Saves all currently staged changes of the project. Used to see the current state of the project.
+            These “snapshots” are the safe versions of the project. The snapshots are first saved locally then stored.
+            This allows for features to be committed together in groups. Then sent to the central repository.
+            This allows for work to be done in an isolated manner.
+        </p>
+    <h2>Tags</h2>
+        <p>
+            Reference points to a specific point in the repository history.
+            Usually used when releasing a new version of a project.
+            There are two types of tags, annotated and lightweight.
+            Annotated tags are stored as full objects in the database.
+            Lightweight tags are simply a name and pointer to a commit.
+        </p>
+    <h2>Repositories</h2>
+        <p>
+            Contain a collection of files of different versions of a project.
+            Users use version control systems to create, modify and update these versions.
+            Cloning is used to get a repo onto a local. They can also create and delete repositories.
+            There are two types of repositories, bare and non-bare.
+            Bare repositories are used by multi developers to share.
+            Users are not allowed to modify or create new versions based on the mods.
+            Non-bare repositories allow developers to create new modifications and versions.
+            Cloning repositories automatically create these types.
+            There are four stages a file has in a repository, untracked, tracked, staged and modified.
+            Untracked files are the ones that the file was never committed nor staged.
+            Tracked files are the ones that are committed but not staged.
+            Staged files are the ones that were added and are waiting to be committed.
+            Modified files are files that changed but not staged.
+            To synchronize your main and remote repositories you need to use the git push and pull commands.
+            Git pull to go from the main to remote and push for vise versa.
+        </p>
+<h1>Docker</h1>
+    <h2>Containers</h2>
+        <p>
+            Standard unit of software that packages up code and all its dependencies so the application runs quickly
+            and reliably from one computing environment to another. Numerous ones run on the same infrastructure.
+            They share operating systems. Each application runs in isolation. There are three types of containers;
+            standard, lightweight and secure. Standard containers is the industry standard ones that Docker created.
+            Lightweight ones share the OS system kernel thus not requiring an OS per application.
+            The secure containers are where applications are safer as Docker provides the strongest default isolation
+            capabilities.
+        </p>
+    <h2>Images</h2>
+        <p>
+            A template with instructions for creating containers. Can be considered a starting point when using Docker.
+            Is compared to a snapshot in virtual machines. They contain the application code, libraries, tools,
+            dependencies and other files needed to make an application run. It is stored in Docker Hub or repos.
+        </p>
+    <h2>Commands</h2>
+        <p>
+            There are a few commands that you need to know.
+            docker -version which tells you the current version of docker you have installed.
+            docker pull / push, used to push or pull images from docker repo.
+            docker run is used to create a container from an image.
+            docker ps is used to see what containers are running.
+            Adding a -a to the end of it will let you also see existing containers.
+            docker exec is how you access a running container. docker stop is how you shut it down.
+            docker kill ends it immediately.
+            docker commit is used to create a new image of an edited container on local.
+            docker login is how you log into hub repo. docker images is how you can see all locally stored images.
+            docker rm is how you delete a stopped container.
+            Add an i next to rm and switch the container id to an image one,
+            and you end up doing the same for your image. docker build is how you build an image from that file.
+        </p>
+    <h2>Access through Terminal</h2>
+        <p>By using the proper commands you can do all this using the terminal.</p>
+<h1>Python / Flask</h1>
+    <h2>Pytest</h2>
+        <p>
+            A testing framework based on Python. Mainly used for API test cases. Can also be used for databases and UI.
+            Can go from unit testing to functional testing.
+        </p>
+    <h2>Flask</h2>
+        <p>
+            Flask is a web framework for Python. It is based on the Werkzeug toolkit.
+            This is how you create web pages for your site. You can test your flask application through pytest.
+            You can mainly sync this with your GitHub and use GitHub actions to test your code.
+        </p>
+<h1>Continuous Integration and Development</h1>
+    <h2>GitHub Actions</h2>
+        <p>
+            A continuous integration and continuous delivery platform.
+            Allows automation of building, testing and deploying.
+            There are five main components to GitHub actions; workflows, events, jobs, actions, and runners.
+            Workflows are configurable automated processes that will run one or more jobs.
+            They are defined by the YAML file and run when triggered by an event.
+            Events are the activity within the repo that trigger the workflow.
+            Activities include pushing or pulling into a repo, opening an issue or creating a request.
+            It can be done manually or scheduled. Jobs are the steps in the workflow that execute on runners.
+            They are shell scripts or actions that need to run / execute.
+            Actions are custom to GitHub Action platform. They repeatedly perform complex tasks.
+            This helps lower the amount of repetitive code that you need to write.
+            Runners are the servers in which the workflows run. They only do one job at a time.
+        </p>
+    <h2>Linking to Docker</h2>
+        <p>
+            You can trigger a workflow so that it publishes a docker image.
+            You should store your docker username and password in the secrets section. This is for the login action.
+            Images are used for the metadata action as it is what you are building/pushing to Docker Hub.
+            Finally, comes the build-push action, tags used to tell you what version and push.
+            Push if set to true will send it to the hub if it successfully builds.
+        </p>
 {% endblock %}
