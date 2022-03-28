@@ -1,23 +1,84 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>GitHub Actions</h1>
-    <p>
-        A continuous integration and continuous delivery platform. allows automation of building, testing and deploying.
-        There are five main components to GitHub actions; workflows, events, jobs, actions, and runners.
-        Workflows are configurable automated processes that will run one or more jobs. They are defined by the YAML file
-        and run when triggered by an event. Events are the activity within the repo that trigger the workflow.
-        Activities include pushing or pulling into a repo, opening an issue or creating a request. It can be done manually
-        or scheduled. Jobs are the steps in the workflow that execute on runner. They are shell scripts or actions that
-        need to run / execute. Actions are custom to GitHub Action platform. They preform repeatedly complex tasks.
-        This helps lower the amount of repetitive code that you need to write. Runners are the servers in which the
-        workflows run. They only do one job at a time.
-    </p>
-
-    <h1>Linking to Docker</h1>
-    <p> You can trigger a workflow so that it publishes a docker image. You should store your docker username and
-        password in the secrets section. This is for the login action. Images is used for the metadata action as it is
-        what you are building/pushing to Docker Hub. Finally, comes the build-push action, tags used to tell you what
-        version and push. Push if set to true will send it to the hub if it successfully builds.
-    </p>
-
+<h1>SOLID and Design Patterns</h1>
+    <h2>SOLID</h2>
+        <p>
+            The principles of SOLID is an acronym created by Robert C. Martin.
+            The acronym stands for the different conventions of coding.
+            Those being Single-Responsibility Principle (SRP), Open-Closed Principle(OCP),
+            Liskov Substitution Principle (LSP), Interface Segregation Principle (ISP) and Dependency Inversion
+            Principle (DIP). They are not in a specific order but a collection of best practices.
+            SOLID is a great tool for developers who consider quality to be a main priority.
+        </p>
+    <h3>Single-Responsibility Principle</h3>
+        <p>
+            The Single-responsibility principle states: A class should have one, and only one, reason to change.
+            Meaning Every component should have only one responsibility.
+        </p>
+    <h3>Open-Closed Principle</h3>
+        <p>
+            OCP states Software entities should be open for extension but closed for modification.
+            This means that programmers should not need to modify code written to add new functions
+            but simply just have to add them.
+        </p>
+    <h3>Liskov Substitution Principle</h3>
+        <p>
+            The Liskov Substitution Principle is about functions that use pointers or references to base classes
+            (and) must be able to use objects of derived classes without knowing it or derived classes must be
+            substitutable for their base classes. Simply stated, if a function is redefined in the child class then
+            the user should not notice a difference in behavior of said function, and it is considered a substitute
+            for parent class.
+        </p>
+    <h3>Interface Segregation Principle</h3>
+        <p>
+            The ISP claims that many client-specific interfaces are better than one general purpose interface.
+            An interface is all methods and properties exposed thus the user can interact with them.
+            The principle can be interpreted to, a class should only have one the needed interface and avoid the
+            methods that are not needed
+        </p>
+    <h3>Dependency Inversion Principle </h3>
+        <p>
+            The last principle, DIP, states that “Abstraction should not depend on details.
+            Details should depend on abstraction. High level modules should not depend on low level modules.
+            Both should depend on abstractions”. In other words Abstractions should not be dependent on low level
+            methods but both should be dependent on a third interface.
+        </p>
+    <h2>Design Patterns</h2>
+        <p>
+            Design patterns are general repeatable solutions to common problems. It is not a finished design that can
+            be turned into code. It is a template of how to solve a problem. There are three main types of design
+            patterns: creational, structural and behavioral. They use class-creation which uses inheritance or
+            object-creation which uses delectation
+        </p>
+    <h3>Creational Patterns</h3>
+        <p>
+            Creational patterns are about class intationation.
+            There are six different types of creational patterns:
+            Abstract Factory which creates an instance of several families of classes, Builder which separates
+            object construction from its representation, Factory Method creates an instance of several derived classes,
+            Object pool avoids expensive acquisition and release of resources by recycling objects that are no longer
+            in use, prototype which is a fully initialized instance that is  to be copied or cloned and Singleton
+            which is a class where only a single instance exists
+        </p>
+    <h3>Structural Patterns</h3>
+        <p>
+            Structural patterns are about class object composition. There are eight types of structural patterns:
+            Adapter which matches interfaces of different classes, bridge which separates an object’s interface from
+            its implementation, composite is a tree structure, Decorator adds responsibilities to objects, facade is
+            a single class that represents an entire subsystem, flyweight is a fine-grained instance used for efficient
+            sharing, private class data restricts access and proxy is an object representing another object.
+        </p>
+    <h3>Behavioral Patterns</h3>
+        <p>
+            The last type is behavioral design patterns which are about class’s object communication,
+            mainly concerned with communication between objects.  In total there are twelve types of behavioral
+            patterns. Chain of responsibility is a way of passing a request between a chain of objects,
+            Command encapsulates a command request as an object, Interpreter is a way to include language elements
+            in a program, Iterator Sequentially accesses the elements of a collection and Mediator defines simplified
+            communication between classes. Memento captures and restores an object’s internal state, Null object is
+            designed to act as a default value of an object, Observer is a way of notifying change to a number of
+            classes and state alters an object's behavior when its state changes. Strategy encapsulates an algorithm
+            inside a class, Template method defers the exact steps of an algorithm to a subclass and Visitor defines
+            a new operation to a class without change.
+        </p>
 {% endblock %}
